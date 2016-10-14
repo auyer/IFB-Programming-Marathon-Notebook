@@ -25,11 +25,6 @@ def qsort(inlist):
         greater = qsort([x for x in inlist[1:] if x >= pivot])
         return lesser + [pivot] + greater
 
-#Save interactiveShell content
-import readline
-readline.write_history_file('path.py')
-
-
 # Merge sort
 def mergeSort(alist):
     if len(alist)>1:
@@ -61,3 +56,7 @@ def mergeSort(alist):
             alist[k]=righthalf[j]
             j=j+1
             k=k+1
+
+#Save interactiveShell content
+import readline
+readline.write_history_file('path.py')

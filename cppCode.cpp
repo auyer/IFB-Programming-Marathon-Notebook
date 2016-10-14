@@ -362,3 +362,50 @@
   } else
        copying_insertionsort (p, k, t);
   }
+
+// Primality 
+  /*
+   * C++ Program to Implement Fermat Primality Test
+   *inretations: 50
+   */
+  #include <cstring>
+  #include <iostream>
+  #include <cstdlib>
+  #define ll long long
+  using namespace std;
+  /*
+   * modular exponentiation
+   */
+  ll modulo(ll base, ll exponent, ll mod)
+  {
+      ll x = 1;
+      ll y = base;
+      while (exponent > 0)
+      {
+          if (exponent % 2 == 1)
+              x = (x * y) % mod;
+          y = (y * y) % mod;
+          exponent = exponent / 2;
+      }
+      return x % mod;
+  }
+
+  /*
+   * Fermat's test for checking primality
+   */
+  bool Fermat(ll p, int iterations)
+  {
+      if (p == 1)
+      {
+          return false;
+      }
+      for (int i = 0; i < iterations; i++)
+      {
+          ll a = rand() % (p - 1) + 1;
+          if (modulo(a, p - 1, p) != 1)
+          {
+              return false;
+          }
+      }
+      return true;
+  }

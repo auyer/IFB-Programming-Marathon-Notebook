@@ -1,8 +1,7 @@
---------------------------
 // Geometria
-//========================POINT INCLUSION-2D========================
+//====POINT INCLUSION-2D===
 // a Point is defined by its coordinates {int x, y;}
-//===================================================================
+//==============
 
 
 // isLeft(): tests if a point is Left|On|Right of an infinite line.
@@ -17,7 +16,7 @@ isLeft( Point P0, Point P1, Point P2 )
     return ( (P1.x - P0.x) * (P2.y - P0.y)
             - (P2.x -  P0.x) * (P1.y - P0.y) );
 }
-//===================================================================
+//===================
 
 
 // cn_PnPoly(): crossing number test for a point in a polygon
@@ -43,7 +42,7 @@ cn_PnPoly( Point P, Point* V, int n )
     return (cn&1);    // 0 if even (out), and 1 if  odd (in)
 
 }
-//===================================================================
+//======================
 
 
 // wn_PnPoly(): winding number test for a point in a polygon
@@ -70,7 +69,7 @@ wn_PnPoly( Point P, Point* V, int n )
     }
     return wn;
 }
-//========================DISTANCE-POINT-PLANE-3D========================
+//=========DISTANCE-POINT-PLANE-3D======
 // dot product (3D) which  allows vector operations in arguments
 #define dot(u,v)   ((u).x * (v).x + (u).y * (v).y + (u).z * (v).z)
 #define norm(v)    sqrt(dot(v,v))  // norm = length of  vector
@@ -96,7 +95,7 @@ dist_Point_to_Plane( Point P, Plane PL, Point* B)
     return d(P, *B);
 }
 
-//========================DISTANCE-POINT-LINE-2D=======================
+//========DISTANCE-POINT-LINE-2D=========
 
 // dot product (3D) which allows vector operations in arguments
 #define dot(u,v)   ((u).x * (v).x + (u).y * (v).y + (u).z * (v).z)
@@ -133,7 +132,7 @@ closest2D_Point_to_Line( Point P[], int n, Line L)
     }
     return mi;     // the index of the closest  Point P[mi]
 }
-//===================================================================
+//=========================
 // dist_Point_to_Line(): get the distance of a point to a line
 //     Input:  a Point P and a Line L (in any dimension)
 //     Return: the shortest distance from P to L
@@ -150,7 +149,7 @@ dist_Point_to_Line( Point P, Line L)
     Point Pb = L.P0 + b * v;
     return d(P, Pb);
 }
-//===================================================================
+//==========================
 // dist_Point_to_Segment(): get the distance of a point to a segment
 //     Input:  a Point P and a Segment S (in any dimension)
 //     Return: the shortest distance from P to S
@@ -173,7 +172,7 @@ dist_Point_to_Segment( Point P, Segment S)
     return d(P, Pb);
 }
 
-//==========================AREA=================================
+//=========AREA=======
 // isLeft(): test if a point is Left|On|Right of an infinite 2D line.
 //    Input:  three points P0, P1, and P2
 //    Return: >0 for P2 left of the line through P0 to P1
